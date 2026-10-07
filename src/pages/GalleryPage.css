@@ -1,0 +1,191 @@
+.gallery-page { min-height: 100vh; }
+
+.gallery-hero {
+  text-align: center;
+  padding: 5rem 2rem 3rem;
+  background: linear-gradient(180deg, #111 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-sub {
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.gallery-hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 400;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, var(--text) 0%, var(--gold-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-desc {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
+}
+
+.year-filter {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 2.5rem 2rem;
+  flex-wrap: wrap;
+}
+
+.year-filter button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.5rem 1.5rem;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+.year-filter button:hover,
+.year-filter button.active {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(201,168,76,0.08);
+}
+
+.photo-grid {
+  columns: 3;
+  column-gap: 1rem;
+  padding: 0 3rem 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) { .photo-grid { columns: 2; padding: 0 1.5rem 3rem; } }
+@media (max-width: 500px) { .photo-grid { columns: 1; padding: 0 1rem 2rem; } }
+
+.photo-card {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.photo-card img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.photo-card:hover img { transform: scale(1.04); }
+
+.photo-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 2rem 1rem 1rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.photo-card:hover .photo-overlay { opacity: 1; }
+
+.photo-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.photo-meta {
+  font-size: 0.75rem;
+  color: var(--gold);
+  margin-top: 0.2rem;
+  letter-spacing: 1px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 6rem 2rem;
+  color: var(--text-muted);
+}
+
+.empty-state span { font-size: 2rem; color: var(--gold); display: block; margin-bottom: 1rem; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+}
+
+.lightbox-content img {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 2rem; height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.8rem;
+  z-index: 1;
+  transition: all 0.2s;
+}
+
+.lightbox-close:hover { border-color: var(--gold); color: var(--gold); }
+
+.lightbox-info {
+  padding: 1.2rem 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.lightbox-info h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.lightbox-info p {
+  font-size: 0.8rem;
+  color: var(--gold);
+  margin-top: 0.3rem;
+  letter-spacing: 1px;
+}
+
+.lightbox-desc {
+  color: var(--text-muted) !important;
+  font-size: 0.85rem !important;
+  margin-top: 0.5rem !important;
+  letter-spacing: 0 !important;
+  font-style: italic;
+}
