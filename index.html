@@ -5,6 +5,11 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel Memories</title>
+    <script>
+      if (!window.location.hash) {
+        window.location.replace(window.location.href.replace(/\/$/, '') + '/#/');
+      }
+    </script>
     <script type="module" crossorigin src="/travel_memories/assets/index-D1cl-wrx.js"></script>
     <link rel="stylesheet" crossorigin href="/travel_memories/assets/index-Q5ZgETFx.css">
   </head>
